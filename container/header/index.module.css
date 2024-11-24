@@ -1,0 +1,26 @@
+.header {
+  /* height: 85px; */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999 !important;
+
+  transition: linear 0.2s all;
+}
+
+.top-header-area {
+  padding: 25px 0;
+}
+
+.header-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  position: relative;
+  width: 150px;
+  height: 30px;
+}

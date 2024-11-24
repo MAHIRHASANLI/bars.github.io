@@ -1,9 +1,16 @@
+import MainSection from "@/sections/home/main";
+import ProductSection from "@/sections/home/product";
 import React from "react";
 
 type Props = {};
 
 const HomeContainer = (props: Props) => {
-  return <div>HomeContainer</div>;
+  return (
+    <>
+      <MainSection />
+      <ProductSection />
+    </>
+  );
 };
 
 export default HomeContainer;
