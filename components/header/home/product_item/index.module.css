@@ -1,0 +1,37 @@
+.product {
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 0 20px #e4e4e4;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  border-radius: 5px;
+  transition: 0.2s all linear;
+}
+
+.product:hover {
+  box-shadow: none;
+}
+
+.product-img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 30px;
+}
+
+.content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.content span {
+  display: block;
+  opacity: 0.8;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,30 @@
+@media screen and (min-width: 900px) {
+  .nav-links {
+    display: block;
+  }
+
+  .nav-links a {
+    font-weight: 700;
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 12px;
+    transition: 0.2s all linear;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -10px;
+  }
+
+  .nav-links a:last-child {
+    margin-right: 0;
+  }
+
+  .nav-links a:hover {
+    color: #006738 !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+}

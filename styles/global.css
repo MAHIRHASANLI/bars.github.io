@@ -19,7 +19,28 @@ div[data-nextjs-scroll-focus-boundary] {
 .swiper-button-next {
   color: #006738;
   font-weight: bold;
-  width: 5px;
-  height: 5px;
-  margin: 40px;
+  border: 2px solid #006738;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 20px;
+  height: 25px !important;
+  width: 25px !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 900px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
 }

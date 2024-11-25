@@ -1,0 +1,46 @@
+.section-title {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.title {
+  position: relative;
+}
+
+.title::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  background: #006738;
+  width: 70px;
+  height: 2px;
+}
+
+.title h2 {
+  font-weight: 700;
+  line-height: 2.25rem;
+  font-size: 40px;
+  padding-bottom: 15px;
+}
+
+.description p {
+  font-size: 15px;
+  width: 530px;
+  margin: 0 auto;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 900px) {
+  .title h2 {
+    font-size: 28px;
+  }
+  .description p {
+    font-size: 13px;
+    max-width: 285px;
+    margin-top: 0;
+  }
+}

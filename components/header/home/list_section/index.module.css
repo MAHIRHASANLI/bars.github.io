@@ -1,0 +1,61 @@
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.list-icon svg {
+  font-size: 10px !important;
+  display: block;
+  margin-right: 15px;
+  color: #f28123;
+  padding: 15px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 60px;
+  border: 2px #f28123 dotted;
+  border-radius: 999px;
+}
+
+.content h3 {
+  display: block;
+  line-height: 22px;
+  font-size: 18px;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.content p {
+  opacity: 0.75;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  line-height: 1.8;
+  color: #051922;
+}
+
+@media screen and (max-width: 900px) {
+  .list {
+    margin-top: 25px;
+  }
+
+  .list-icon svg {
+    font-size: 12px !important;
+    margin-right: 12px;
+    padding: 15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 60px;
+    border: 1px #f28123 dotted;
+    border-radius: 999px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+}
