@@ -31,13 +31,14 @@
 @media screen and (max-width: 900px) {
   .header {
     height: 70px !important;
+    background-color: #fff !important;
   }
 
   .logo {
     position: relative;
     width: 110px;
     height: 25px;
-    background: #fff;
+    /* background: #fff; */
   }
 
   .menu-btn {
