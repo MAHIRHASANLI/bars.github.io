@@ -9,16 +9,16 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const HeaderSection: React.FC = () => {
   const defaultStil = {
-    height: "85px",
+    height: "90px",
     with: "100%",
     top: "0",
-    background: "transparent",
+    background: "#333",
     // backdropFilter: "blur(8px)",
     // WebkitBackdropFilter: "blur(8px)",
   };
 
   const stilHidden = {
-    height: "85px",
+    height: "90px",
     with: "100%",
     top: "-350px",
     background: "#fff",
@@ -27,7 +27,7 @@ const HeaderSection: React.FC = () => {
   };
 
   const stilVisible = {
-    height: "85px",
+    height: "90px",
     with: "100%",
     top: "0",
     background: "#fff",

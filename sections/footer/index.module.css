@@ -1,0 +1,152 @@
+.footer {
+  background-color: #0b0f14;
+  padding: 50px 0;
+  color: #fff;
+}
+
+.footerContainer {
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+}
+
+.footerColumn:first-child {
+  width: 50%;
+}
+
+.footerColumn {
+  /* width: 20%; */
+  display: inline-block;
+}
+
+.footerColumn h3 {
+  position: relative;
+  margin-bottom: 35px;
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 20px;
+  color: #fff;
+}
+
+.footerColumn h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 50px;
+  height: 2px;
+  background-color: #006738;
+}
+
+.footerColumn p {
+  color: #fff;
+  opacity: 0.7;
+  line-height: 1.5;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.footerColumn ul {
+  list-style-type: none;
+}
+
+.footerColumn ul li {
+  margin-bottom: 10px;
+}
+
+.footerColumn ul li a {
+  color: #fff;
+  opacity: 0.7;
+  line-height: 1.5;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.footerBottom {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footerColumn:first-child {
+    width: 100%;
+  }
+  .footerColumn h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 50px;
+    height: 2px;
+  }
+
+  .footerContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerColumn {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .footerColumn ul {
+    text-align: center;
+    padding: 0;
+  }
+
+  .footerColumn ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  .footerColumn h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .footerColumn p,
+  .footerColumn a {
+    font-size: 14px;
+  }
+
+  .footerBottom p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 0;
+  }
+  .footerColumn:first-child {
+    width: 100%;
+  }
+
+  .footerColumn h3 {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .footerColumn h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 30px;
+    height: 1px;
+  }
+
+  .footerColumn p,
+  .footerColumn a {
+    font-size: 12px !important;
+  }
+
+  .footerBottom p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}

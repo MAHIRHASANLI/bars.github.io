@@ -35,9 +35,15 @@
 }
 
 @media screen and (max-width: 900px) {
+  .section-title {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
   .title h2 {
     font-size: 28px;
   }
+
   .description p {
     font-size: 13px;
     max-width: 285px;

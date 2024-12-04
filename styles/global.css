@@ -38,6 +38,13 @@ div[data-nextjs-scroll-focus-boundary] {
   opacity: 0.8;
 }
 
+@media screen and (min-width: 1500px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr min(1440px, 75%) 1fr;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .swiper-button-prev,
   .swiper-button-next {
