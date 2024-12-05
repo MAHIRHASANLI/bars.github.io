@@ -1,0 +1,36 @@
+section.section {
+  background-color: #374b56;
+}
+
+.content {
+  padding-top: 200px;
+  padding-bottom: 150px;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 50px;
+  font-weight: 900;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.content p {
+  color: #006738;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+@media only screen and (max-width: 800px) {
+  .content h1 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+}

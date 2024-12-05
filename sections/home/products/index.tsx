@@ -1,11 +1,11 @@
 import React from "react";
-import TitleSection from "@/components/header/section_title";
 import styles from "./index.module.css";
-import ProductItem from "@/components/header/home/product_item";
 
 import img1 from "@/images/productsimg1.jpeg";
 import img2 from "@/images/productsimg2.jpeg";
 import img3 from "@/images/productsimg3.jpeg";
+import TitleSection from "@/components/section_title";
+import ProductItem from "@/components/home/product_item";
 type Props = {};
 
 const ProductSection: React.FC = (props: Props) => {

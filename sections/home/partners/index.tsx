@@ -64,7 +64,12 @@ const Partners = () => {
             arrayImg.map((img, i) => (
               <SwiperSlide key={i}>
                 <div className={styles.slider}>
-                  <Image src={img} alt="bars" fill />
+                  <Image
+                    src={img}
+                    alt="bars"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 20vw"
+                  />
                 </div>
               </SwiperSlide>
             ))}

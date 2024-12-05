@@ -14,19 +14,19 @@ const NavLinkDesktop: React.FC = () => {
   }
   return (
     <div className={styles["nav-links"]}>
-      <Link href="" style={style}>
+      <Link href="/" style={style}>
         Ana Səhifə
       </Link>
-      <Link href="" style={style}>
+      <Link href="/about" style={style}>
         Haqqımızda
       </Link>
-      <Link href="" style={style}>
+      <Link href="/partners" style={style}>
         Tərəfdaşlar
       </Link>
-      <Link href="" style={style}>
+      <Link href="/products" style={style}>
         Məhsullar
       </Link>
-      <Link href="" style={style}>
+      <Link href="/contact" style={style}>
         Əlaqə
       </Link>
     </div>

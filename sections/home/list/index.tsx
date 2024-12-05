@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.css";
-import ListComponent from "@/components/header/home/list_section";
+import ListComponent from "@/components/home/list_section";
 
 const ListSection: React.FC = () => {
   return (

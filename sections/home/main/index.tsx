@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.css";
-import SliderOwlComponent from "@/components/header/home/main_section/slider_wrapper";
+import SliderOwlComponent from "@/components/home/main_section/slider_wrapper";
 
 type Props = {};
 

@@ -1,0 +1,62 @@
+section.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 2fr 1fr;
+}
+
+.form-wrapper {
+  grid-column: 1 / 2;
+}
+
+.contact-info {
+  grid-column: 2 / 3;
+}
+
+.content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 3.25rem;
+  color: #051922;
+}
+
+.content p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+@media (max-width: 850px) {
+  section.section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .form-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+
+  .form-wrapper {
+    grid-column: 1 / 2;
+  }
+
+  .contact-info {
+    grid-column: 1 / 2;
+  }
+
+  .content h2 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 2.25rem;
+  }
+
+  .content p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}

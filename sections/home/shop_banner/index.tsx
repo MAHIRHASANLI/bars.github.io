@@ -1,8 +1,8 @@
+"use client";
 import React from "react";
 import styles from "./index.module.css";
-import Button from "@/components/header/button";
-import Image from "next/image";
-import img1 from "@/images/WhatsApp Image 2024-11-25 at 8.46.44 AM (3).jpeg";
+import Button from "@/components/button";
+import BannerSlider from "@/components/home/banner_sider";
 
 const ShopBanner = () => {
   return (
@@ -19,10 +19,8 @@ const ShopBanner = () => {
             </div>
           </div>
 
-          <div className={styles.images}>
-            <div className={styles.image}>
-              <Image src={img1} alt="" fill />
-            </div>
+          <div className={styles.slider}>
+            <BannerSlider />
           </div>
         </div>
       </div>

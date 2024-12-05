@@ -25,7 +25,7 @@ const SliderOwlComponent = ({ title = "", description = "", img = "" }) => {
     <Swiper
       navigation={true}
       modules={[Navigation, Autoplay]}
-      autoplay={{ delay: 5000, disableOnInteraction: true }}
+      autoplay={{ delay: 5000 }}
       loop={true}
       className="mySwiper"
     >
@@ -35,7 +35,7 @@ const SliderOwlComponent = ({ title = "", description = "", img = "" }) => {
             <div
               className={styles.swiper}
               style={{
-                backgroundImage: `linear-gradient(to right,rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${img})`,
+                backgroundImage: `linear-gradient(to top,rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url(${img})`,
               }}
             >
               <div className={styles["main-content"]}>

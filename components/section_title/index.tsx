@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./index.module.css";
 type Props = {
-  firtTitle: string;
+  firtTitle: any;
   description: string;
   lastTitle: string;
 };

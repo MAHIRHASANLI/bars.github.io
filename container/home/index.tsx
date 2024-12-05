@@ -9,13 +9,13 @@ type Props = {};
 
 const HomeContainer = (props: Props) => {
   return (
-    <>
+    <React.Fragment>
       <MainSection />
       <ListSection />
       <ProductSection />
       <ShopBanner />
       <Partners />
-    </>
+    </React.Fragment>
   );
 };
 

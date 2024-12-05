@@ -1,0 +1,40 @@
+.form {
+  margin-top: 20px;
+}
+
+.inputs {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 5px;
+}
+
+.form input {
+  width: 49%;
+  font-size: 14px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.form textarea {
+  font-size: 14px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  height: 200px;
+  border-radius: 3px;
+  width: 100%;
+  resize: none;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  font-size: 14px;
+}
+
+.form input:active,
+.form input:focus,
+.form textarea:active,
+.form textarea:focus {
+  border-color: #006738;
+  outline: none;
+}

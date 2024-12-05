@@ -13,11 +13,11 @@ const NavLinkMobile: React.FC<Props> = ({ isActive }) => {
       style={{ minHeight: isActive ? "300px" : "0" }}
     >
       <div className={styles["mob-links"]}>
-        <Link href="">Ana Səhifə</Link>
-        <Link href="">Haqqımızda</Link>
-        <Link href="">Tərəfdaşlar</Link>
-        <Link href="">Məhsullar</Link>
-        <Link href="">Əlaqə</Link>
+        <Link href="/">Ana Səhifə</Link>
+        <Link href="/about">Haqqımızda</Link>
+        <Link href="/partners">Tərəfdaşlar</Link>
+        <Link href="/products">Məhsullar</Link>
+        <Link href="/contact">Əlaqə</Link>
       </div>
     </div>
   );

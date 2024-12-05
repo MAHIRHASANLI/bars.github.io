@@ -1,18 +1,18 @@
 "use client";
-import NavLinkDesktop from "@/components/header/header/nav_link_desktop";
-import NavLinkMobile from "@/components/header/header/nav_linnk_mobile";
 import React, { useEffect, useState } from "react";
 import styles from "./index.module.css";
 import Image from "next/image";
 import barsLogo from "@/images/barsLogo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
+import NavLinkDesktop from "@/components/header/nav_desktop_links";
+import NavLinkMobile from "@/components/header/nav_mobile_links";
 
 const HeaderSection: React.FC = () => {
   const defaultStil = {
     height: "90px",
     with: "100%",
     top: "0",
-    background: "#333",
+    background: "transparent",
     // backdropFilter: "blur(8px)",
     // WebkitBackdropFilter: "blur(8px)",
   };
@@ -56,7 +56,7 @@ const HeaderSection: React.FC = () => {
             <Image
               src={barsLogo}
               alt="bars"
-              sizes="(max-width: 768px) 100%"
+              sizes="(max-width: 768px) 100%, (max-width: 1200px) 100%"
               fill={true}
             />
           </div>
