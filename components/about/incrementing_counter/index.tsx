@@ -13,6 +13,7 @@ const IncrementingCounter: React.FC<Props> = ({
   content,
 }) => {
   const [count, setCount] = useState<number>(0);
+
   useEffect(() => {
     let interval: any;
     if (count < finalValue) {

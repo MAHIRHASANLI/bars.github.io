@@ -8,7 +8,7 @@ type Props = {};
 const AboutContainer = (props: Props) => {
   return (
     <React.Fragment>
-      <MainGlobalSection title="Haqqımızda" description="Lorem İpsum" />
+      <MainGlobalSection title="Haqqımızda" description="Haqqımızda öyrənin" />
       <AboutSection />
       <Partners />
     </React.Fragment>

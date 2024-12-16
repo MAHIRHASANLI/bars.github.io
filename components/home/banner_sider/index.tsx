@@ -12,7 +12,7 @@ const BannerSlider = () => {
   return (
     <Swiper
       modules={[Autoplay]}
-      autoplay={{ delay: 5000 }}
+      autoplay={{ delay: 3500 }}
       loop={true}
       className="mySwiper"
     >
