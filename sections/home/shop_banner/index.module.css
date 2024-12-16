@@ -44,7 +44,7 @@ section.section {
   .banner-grid {
     display: grid;
     gap: 50px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     text-align: center;
   }
 

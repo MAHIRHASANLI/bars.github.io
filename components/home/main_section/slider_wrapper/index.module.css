@@ -11,8 +11,11 @@
 }
 
 .main-content {
-  text-align: center;
   width: 80%;
+}
+
+.main-content:nth-child(2) {
+  text-align: center !important;
 }
 
 .title {
@@ -44,6 +47,7 @@
   border: 2px;
   border: 2px solid #006738;
   font-size: 13px;
+  text-align: center !important;
   font-weight: 600;
   text-transform: uppercase;
   transition: 0.2s all linear;
@@ -108,6 +112,7 @@ a.bordered-btn:hover::after {
 @media screen and (max-width: 900px) {
   .main-content {
     width: 90%;
+    text-align: center;
   }
 
   .title {

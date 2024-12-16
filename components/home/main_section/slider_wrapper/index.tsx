@@ -20,7 +20,6 @@ const SliderOwlComponent = ({ title = "", description = "", img = "" }) => {
     img: mainImage2.src,
   };
   const arr = [obj1, obj2];
-
   return (
     <Swiper
       navigation={true}
@@ -36,6 +35,7 @@ const SliderOwlComponent = ({ title = "", description = "", img = "" }) => {
               className={styles.swiper}
               style={{
                 backgroundImage: `linear-gradient(to top,rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url(${img})`,
+                textAlign: index % 2 ? "left" : "right",
               }}
             >
               <div className={styles["main-content"]}>
