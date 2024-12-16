@@ -38,6 +38,16 @@ div[data-nextjs-scroll-focus-boundary] {
   opacity: 0.8;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #006738;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 1500px) {
   .container {
     display: grid;
@@ -49,5 +59,9 @@ div[data-nextjs-scroll-focus-boundary] {
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
   }
 }

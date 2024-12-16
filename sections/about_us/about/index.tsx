@@ -43,24 +43,29 @@ const AboutSection = (props: Props) => {
             </div>
           </div>
           <div className={styles["grid-images"]}>
-            <Image alt="" src={img} fill />
+            <Image
+              alt=""
+              src={img}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
           </div>
         </div>
       </div>
       <div className={styles["incrementing-wrapper"]}>
         <IncrementingCounter
           finalValue={50}
-          duration={100}
+          duration={80}
           content="Avadanlıq Satışı"
         />
         <IncrementingCounter
-          finalValue={100}
-          duration={80}
+          finalValue={80}
+          duration={50}
           content="Saygac Satışı"
         />
         <IncrementingCounter
           finalValue={120}
-          duration={50}
+          duration={40}
           content="Avadanlıq Satışı"
         />
       </div>
