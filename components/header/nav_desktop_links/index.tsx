@@ -13,7 +13,7 @@ const NavLinkDesktop: React.FC = () => {
     else setStyle({ color: "#fff" });
   }
   return (
-    <div className={styles["nav-links"]}>
+    <ul className={styles["nav-links"]}>
       <Link href="/" prefetch={true} scroll={false} style={style}>
         Ana Səhifə
       </Link>
@@ -23,13 +23,25 @@ const NavLinkDesktop: React.FC = () => {
       <Link href="/partners" prefetch={true} scroll={false} style={style}>
         Tərəfdaşlar
       </Link>
-      <Link href="/products" prefetch={true} scroll={false} style={style}>
-        Məhsullar
-      </Link>
+
+      <li className={styles["dropdown-wrapper"]}>
+        <Link href="/" prefetch={true} scroll={false} style={style}>
+          Məhsullar
+        </Link>
+
+        <ul className={styles.dropdown}>
+          <Link href="/products/qaz_avadanliqlari">Qaz avadanliqlari</Link>
+
+          <Link href="/products/tikinti_materiallari">
+            Tikinti materiallari
+          </Link>
+        </ul>
+      </li>
+
       <Link href="/contact" prefetch={true} scroll={false} style={style}>
         Əlaqə
       </Link>
-    </div>
+    </ul>
   );
 };
 
