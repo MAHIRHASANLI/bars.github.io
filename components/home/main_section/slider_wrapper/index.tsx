@@ -10,13 +10,14 @@ import mainImage2 from "@/images/main_section_img2.jpeg";
 
 const SliderOwlComponent = ({ title = "", description = "", img = "" }) => {
   const obj1 = {
-    title: "Lorem Ipsum",
-    description: "Lorem ipsum dolor sit amet.",
+    title: "Bars İnşaat sizə ən yüksək keyfiyyətli məhsulları təqdim edir",
+    description: "Bars İnşaat – Tikinti Materialları və Qaz Avadanlıqları",
     img: mainImage1.src,
   };
   const obj2 = {
     title: "Lorem Twoo",
-    description: "Qaz saygaci 2",
+    description:
+      "Bars İnşaat sizə ən yüksək keyfiyyətli məhsulları təqdim edir",
     img: mainImage2.src,
   };
   const arr = [obj1, obj2];
@@ -39,9 +40,9 @@ const SliderOwlComponent = ({ title = "", description = "", img = "" }) => {
               }}
             >
               <div className={styles["main-content"]}>
-                <div>
+                {/* <div>
                   <p className={styles.title}> {title}</p>
-                </div>
+                </div> */}
                 <div>
                   <h1 className={styles.description}>{description}</h1>
                 </div>
