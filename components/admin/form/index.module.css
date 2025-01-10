@@ -1,0 +1,93 @@
+.form-wrapper {
+  width: 50%;
+  text-align: center;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  border-radius: 15px;
+  z-index: 99;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.select-file {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-file {
+  /* width: 80px; */
+  overflow: hidden;
+}
+.select {
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 15px;
+}
+
+.input-group input,
+.select-file input,
+.select-file select {
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.input-file input {
+  padding: 13px;
+}
+
+.input-group input:focus {
+  border-color: #006738;
+  outline: none;
+}
+
+.btn-submit {
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  margin-top: 20px !important;
+  padding: 15px 25px;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: #006738;
+  font-size: 13px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.2s all linear;
+  box-shadow: rgb(38, 57, 77) 0px 10px 10px -10px;
+  letter-spacing: 2px;
+}
+
+.close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: red;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-wrapper span {
+  font-size: 12px;
+  color: red;
+  display: block;
+  text-align: left !important;
+}

@@ -1,0 +1,35 @@
+.product th {
+  padding: 10px;
+}
+
+.product th,
+.product td {
+  padding: 5px;
+}
+
+button.btn-put,
+button.btn-remove {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  color: white !important;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.btn-put {
+  background-color: #4caf50;
+}
+
+button.btn-remove {
+  margin-left: 10px;
+  background-color: #f44336;
+}
+
+.product-img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

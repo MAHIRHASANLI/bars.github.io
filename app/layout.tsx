@@ -6,8 +6,6 @@ export const metadata: Metadata = {
     "Bars İnşaat qaz avadanlıqları, yapışdırıcılar və tikinti materiallarının geniş çeşidini təklif edir. Yüksək keyfiyyətli və etibarlı məhsullarla tikinti layihələrinizi tamamlayın.",
   keywords:
     "qaz avadanlıqları, tikinti materialları, yapışdırıcılar, qaz sistemləri, inşaat materialları, Bars İnşaat",
-  robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1.0",
 };
 
 const poppins = Poppins({
