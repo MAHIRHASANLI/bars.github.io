@@ -9,7 +9,7 @@
 .table {
   min-width: 65%;
   max-width: 80%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -61,4 +61,92 @@
   border-radius: 5px;
   cursor: pointer;
   background-color: rgb(76, 127, 175);
+}
+
+/* Min 800px və max 1200px üçün */
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .table-wrapper {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .table {
+    min-width: 85%; /* Daha geniş olsun */
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .search-add {
+    flex-direction: column;
+    width: 80%; /* Daha çox yer tutsun */
+    margin-bottom: 15px;
+    gap: 10px;
+  }
+
+  .serch-input {
+    width: 100%; /* Search input daha geniş olsun */
+  }
+
+  .serch-input input {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .btn-add {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .thead tr th {
+    font-size: 12px;
+  }
+}
+
+/* Max 800px üçün */
+@media screen and (max-width: 800px) {
+  .table-wrapper {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .table {
+    min-width: 95%; /* Kiçik ekranlar üçün minimum genişlik artırılır */
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .search-add {
+    width: 90%; /* Kiçik ekranlarda daha geniş */
+    flex-direction: column; /* Flex yönü sütun olsun */
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  .serch-input {
+    width: 100%; /* Kiçik ekranlar üçün tam genişlik */
+    margin-bottom: 10px; /* Input və düymə arasında boşluq olsun */
+  }
+
+  .serch-input input {
+    font-size: 10px;
+    padding: 8px;
+  }
+
+  .btn-add {
+    padding: 8px 20px;
+    font-size: 10px;
+    width: 100%;
+  }
+
+  .thead tr th {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .thead tr th {
+    font-size: 8px;
+  }
 }

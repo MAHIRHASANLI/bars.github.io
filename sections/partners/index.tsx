@@ -16,69 +16,31 @@ import "swiper/css";
 
 import styles from "./index.module.css";
 import Link from "next/link";
-export const arrayImg = [
-  img1.src,
-  img2.src,
-  img3.src,
-  img4.src,
-  img5.src,
-  img6.src,
-  img7.src,
-  img8.src,
+export const partners = [
+  { image: img1.src, name: "" },
+  { image: img2.src, name: "" },
+  { image: img3.src, name: "" },
+  { image: img4.src, name: "" },
+  { image: img5.src, name: "" },
+  { image: img6.src, name: "" },
+  { image: img7.src, name: "" },
+  { image: img8.src, name: "" },
 ];
 const Partners = () => {
   return (
     <section className={styles.section}>
-      <div>
-        <Swiper
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 0,
-            },
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 0,
-            },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 0,
-            },
-            1024: {
-              slidesPerView: 4,
-              spaceBetween: 50,
-            },
-            1500: {
-              slidesPerView: 5,
-              spaceBetween: 0,
-            },
-          }}
-          modules={[Autoplay]}
-          className="mySwiper"
-        >
-          {arrayImg &&
-            arrayImg.map((img, i) => (
-              <SwiperSlide key={i}>
-                <Link href="">
-                  <div className={styles.slider}>
-                    <Image
-                      src={img}
-                      alt="bars"
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 20vw"
-                    />
-                  </div>
-                  <div className={styles.content}>
-                    <h3>Terefdasin Adi</h3>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            ))}
-        </Swiper>
+      <div className={styles.partners}>
+        {partners &&
+          partners.map((partner: { image: any; name: string }, i: number) => (
+            <div className={styles["image-wrapper"]} key={i}>
+              <Image
+                src={partner.image}
+                alt={partner.name}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+          ))}
       </div>
     </section>
   );

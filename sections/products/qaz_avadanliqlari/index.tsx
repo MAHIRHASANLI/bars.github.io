@@ -1,16 +1,21 @@
+import { getAllProduct } from "@/api/product_request";
 import ProductsComponent from "@/components/products";
 import ProductLayoutComponent from "@/product_layout";
-import React from "react";
+import { ProductType } from "@/types";
 
-type Props = {};
+type Props = {
+  products: ProductType[];
+};
 
-const GasEquipmentSection = (props: Props) => {
+// React Server Component
+const GasEquipmentSection = async () => {
+  const { products } = await getAllProduct("gaz");
+
   return (
     <ProductLayoutComponent>
-      {Array(6)
-        .fill(null)
-        .map((_, i) => (
-          <ProductsComponent key={i} />
+      {products &&
+        products.map((product: ProductType) => (
+          <ProductsComponent key={product._id} product={product} />
         ))}
     </ProductLayoutComponent>
   );

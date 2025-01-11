@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import styles from "./index.module.css";
-import Button from "@/components/button";
 import { ProductType } from "@/types";
 import { FormikHelpers, useFormik } from "formik";
 import validationSchema from "./validation";
@@ -10,62 +9,78 @@ import {
   postProduct,
   putProduct,
 } from "@/api/product_request";
-import { log } from "console";
+import SweetAlert from "@/utils/sweet_Alert";
 
 interface FormComponentProps {
-  handleOpenForm: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  closeForm: () => void;
   product: ProductType | any;
 }
 
 const FormComponent: React.FC<FormComponentProps> = ({
-  handleOpenForm,
+  closeForm,
   product,
 }) => {
   const formik = useFormik<ProductType>({
     initialValues: {
       name: product ? product.name : "",
       brand: product ? product.brand : "",
-      price: product ? product.price : 0,
+      price: product ? product.price : "",
       image: product ? product.image : "",
       category: product ? product.category : "",
     },
     validationSchema: validationSchema,
     onSubmit: async (values, actions: FormikHelpers<ProductType>) => {
+      //! FORMU GIZLEMEK
+      closeForm();
       //! POST SORGUSU
       const image_IN_ClOUD = await postCloudinaryImg(values.image);
       if (product === null) {
-        const response = await postProduct({
-          ...values,
-          image: image_IN_ClOUD,
-        });
-
-        //TODO FORM TEMIZLENMESI
-        actions.resetForm();
-        //?
-        console.log(response);
+        try {
+          const response = await postProduct({
+            ...values,
+            image: image_IN_ClOUD,
+          });
+          //TODO MESAJS GOSTERILMESI
+          SweetAlert("success", "Məhsul əlavə edildi");
+          //TODO FORM TEMIZLENMESI
+          actions.resetForm();
+          //?
+          console.log(response);
+        } catch (error) {
+          //TODO MESAJS GOSTERILMESI
+          SweetAlert("success", "Məhsul əlavə edilmədi");
+          //TODO FORM TEMIZLENMESI
+          actions.resetForm();
+          //?
+          console.error(error);
+        }
       }
       //! UPDATE SORGUSU
       else if (product !== null) {
-        const response = await putProduct(
-          {
-            ...values,
-            image: image_IN_ClOUD,
-          },
-          product._id
-        );
-
-        //?
-        console.log(response);
+        try {
+          const response = await putProduct(
+            {
+              ...values,
+              image: image_IN_ClOUD,
+            },
+            product._id
+          );
+          //TODO MESAJS GOSTERILMESI
+          SweetAlert("success", "Məhsul yeniləndi");
+          //?
+          console.log(response);
+        } catch (error) {
+          SweetAlert("success", "Məhsul yenilənmədi");
+          //?
+          console.error(error);
+        }
       }
     },
   });
 
   return (
     <div className={styles["form-wrapper"]}>
-      <button
-        className={styles.close}
-        onClick={(event) => handleOpenForm(event)}
-      >
+      <button className={styles.close} onClick={closeForm}>
         X
       </button>
       <form onSubmit={formik.handleSubmit}>
@@ -118,6 +133,7 @@ const FormComponent: React.FC<FormComponentProps> = ({
             value={formik.values.price}
             name="price"
             placeholder="Qiymət"
+            inputMode="numeric"
           />
           <span>{formik.errors.price}</span>
         </div>

@@ -5,29 +5,40 @@ import styles from "./index.module.css";
 import { deleteProduct, getAllProduct } from "@/api/product_request";
 
 import { ProductType } from "@/types";
+import SweetAlert from "@/utils/sweet_Alert";
 interface ProductComponentProps {
-  handleOpenForm: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  toggleForm: (event: React.MouseEvent<HTMLButtonElement>) => void;
   setProduct: any;
+  products: ProductType[];
+  setProducts: any;
 }
 
 const ProductComponent: React.FC<ProductComponentProps> = ({
-  handleOpenForm,
+  toggleForm,
   setProduct,
+  products,
+  setProducts,
 }) => {
-  const [products, setProducts] = React.useState<ProductType[]>([]);
-  useEffect(() => {
+  React.useEffect(() => {
     getAllProduct("gaz").then(({ products }) => setProducts(products));
   }, []);
 
   //! MƏHSULU SİLMƏK
-  const handleRemoveProduct = async (id: string | undefined) => {
-    if (confirm("Əminsiniz?")) {
-      try {
-        const response = await deleteProduct(id || "");
-        console.log(response);
-      } catch (error) {
-        console.error(error);
+  const handleRemoveProduct = async (event: any, id: string | undefined) => {
+    if (id) {
+      if (confirm("Əminsiniz?")) {
+        try {
+          const response = await deleteProduct(id || "");
+          console.log(response);
+          SweetAlert("success", "Məhsul silindi");
+          event.target.parentElement.parentElement.remove();
+        } catch (error) {
+          console.error(error);
+          SweetAlert("success", "Məhsul silindi");
+        }
       }
+    } else {
+      SweetAlert("error", "Məhsul Tapılmadı");
     }
   };
   return (
@@ -38,7 +49,7 @@ const ProductComponent: React.FC<ProductComponentProps> = ({
             <th className={styles["product-img"]}>
               <Image
                 src={product.image}
-                alt=""
+                alt={product.name}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
@@ -51,14 +62,14 @@ const ProductComponent: React.FC<ProductComponentProps> = ({
                 className={styles["btn-put"]}
                 onClick={(event) => {
                   setProduct(product);
-                  handleOpenForm(event);
+                  toggleForm(event);
                 }}
               >
                 Düzəliş et
               </button>
               <button
                 className={styles["btn-remove"]}
-                onClick={() => handleRemoveProduct(product._id)}
+                onClick={(event) => handleRemoveProduct(event, product._id)}
               >
                 Sil
               </button>

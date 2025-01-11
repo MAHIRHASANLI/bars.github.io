@@ -33,3 +33,79 @@ button.btn-remove {
   border-radius: 50%;
   margin-right: 10px;
 }
+
+/* Min 800px və max 1200px üçün */
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .product th {
+    padding: 12px;
+  }
+
+  .product th,
+  .product td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  button.btn-put,
+  button.btn-remove {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  button.btn-put {
+    background-color: #4caf50;
+  }
+
+  button.btn-remove {
+    margin-left: 12px;
+    background-color: #f44336;
+  }
+
+  .product-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+}
+
+/* Max 800px üçün */
+@media screen and (max-width: 800px) {
+  .product th {
+    padding: 8px;
+  }
+
+  .product th,
+  .product td {
+    font-size: 10px;
+
+    padding: 5px;
+  }
+
+  button.btn-put,
+  button.btn-remove {
+    padding: 3px 5px;
+    font-size: 8px;
+  }
+
+  button.btn-put {
+    background-color: #4caf50;
+  }
+
+  button.btn-remove {
+    margin-left: 8px;
+    background-color: #f44336;
+  }
+
+  .product-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .product-img {
+    width: 25px;
+    height: 20px;
+    margin-right: 3px;
+  }
+}

@@ -76,3 +76,22 @@ section.section {
   gap: 20px;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 800px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-filters {
+    grid-column: 1 / 2;
+  }
+
+  .grid-product {
+    grid-column: 1 / 2;
+    text-align: center;
+  }
+
+  .select-options {
+    width: 100%;
+  }
+}

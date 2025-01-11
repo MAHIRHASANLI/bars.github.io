@@ -1,8 +1,8 @@
+import PartnersSliderComponent from "@/components/partners_slider";
 import ListSection from "@/sections/home/list";
 import MainSection from "@/sections/home/main";
 import ProductSection from "@/sections/home/products";
 import ShopBanner from "@/sections/home/shop_banner";
-import Partners from "@/sections/partners";
 import React from "react";
 
 type Props = {};
@@ -14,7 +14,7 @@ const HomeContainer = (props: Props) => {
       <ListSection />
       <ProductSection />
       <ShopBanner />
-      <Partners />
+      <PartnersSliderComponent />
     </React.Fragment>
   );
 };

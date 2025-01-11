@@ -1,26 +1,37 @@
 import React from "react";
 import styles from "./index.module.css";
 import Image from "next/image";
-import img from "@/images/main_section_img1.jpeg";
-type Props = {};
+import { ProductType } from "@/types";
+import { FaManatSign } from "react-icons/fa6";
 
-const ProductsComponent = (props: Props) => {
+type Props = { product: ProductType };
+
+const ProductsComponent: React.FC<Props> = ({ product }) => {
   return (
     <div className={styles.card}>
       <div className={styles["card-img"]}>
-        <Image src={img} alt="ss" fill />
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
       <div className={styles.content}>
         <div>
-          <h3 className={styles.product}>ZMBCARSTA</h3>
+          <h3 className={styles.product}>{product.brand}</h3>
         </div>
         <div>
-          <p className={styles.text}>
-            Karvan sayğac qutusu yığılması – Aşağıdan Giriş-Çıxış
-          </p>
+          <p className={styles.text}>{product.name}</p>
         </div>
         <div>
-          <h5 className={styles.price}>Qiymət: 30M</h5>
+          <h5 className={styles.price}>
+            Qiymət:{" "}
+            <span>
+              {" "}
+              {product.price} <FaManatSign />
+            </span>
+          </h5>
         </div>
       </div>
     </div>
