@@ -12,10 +12,8 @@ const FormSection = (props: Props) => {
           <div className={styles.content}>
             <h2>Sualiniz var?</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo
-              alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore,
-              esse natus!
+              Sualınız var? Hər hansı sualınız varsa, bizə müraciət edin.
+              Komandamız sizə kömək etmək üçün buradadır.
             </p>
           </div>
           <ContactForm />

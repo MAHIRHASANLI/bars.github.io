@@ -16,6 +16,7 @@ import "swiper/css";
 
 import styles from "./index.module.css";
 import Link from "next/link";
+import TitleSection from "@/components/section_title";
 export const partners = [
   { image: img1.src, name: "" },
   { image: img2.src, name: "" },
@@ -29,6 +30,11 @@ export const partners = [
 const Partners = () => {
   return (
     <section className={styles.section}>
+      <TitleSection
+        firtTitle="Bizim"
+        lastTitle="Tərəfdaşlarımız"
+        description="Bizim Tərəfdaşlarımız Birlikdə güvənə əsaslanan əməkdaşlıq qurduğumuz etibarlı tərəfdaşlarımızla xidmət keyfiyyətini daim yüksəldirik."
+      />
       <div className={styles.partners}>
         {partners &&
           partners.map((partner: { image: any; name: string }, i: number) => (

@@ -30,53 +30,62 @@ const FormComponent: React.FC<FormComponentProps> = ({
     },
     validationSchema: validationSchema,
     onSubmit: async (values, actions: FormikHelpers<ProductType>) => {
-      //! FORMU GIZLEMEK
       closeForm();
+      //! FORMU GIZLEMEK
+      actions.resetForm();
       //! POST SORGUSU
       const image_IN_ClOUD = await postCloudinaryImg(values.image);
       if (product === null) {
-        try {
-          const response = await postProduct({
-            ...values,
-            image: image_IN_ClOUD,
-          });
-          //TODO MESAJS GOSTERILMESI
-          SweetAlert("success", "Məhsul əlavə edildi");
-          //TODO FORM TEMIZLENMESI
-          actions.resetForm();
-          //?
-          console.log(response);
-        } catch (error) {
-          //TODO MESAJS GOSTERILMESI
-          SweetAlert("success", "Məhsul əlavə edilmədi");
-          //TODO FORM TEMIZLENMESI
-          actions.resetForm();
-          //?
-          console.error(error);
-        }
+        await postPartnerDatas({
+          ...values,
+          image: image_IN_ClOUD,
+        });
+        //TODO FORM TEMIZLENMESI
+        actions.resetForm();
       }
       //! UPDATE SORGUSU
       else if (product !== null) {
-        try {
-          const response = await putProduct(
-            {
-              ...values,
-              image: image_IN_ClOUD,
-            },
-            product._id
-          );
-          //TODO MESAJS GOSTERILMESI
-          SweetAlert("success", "Məhsul yeniləndi");
-          //?
-          console.log(response);
-        } catch (error) {
-          SweetAlert("success", "Məhsul yenilənmədi");
-          //?
-          console.error(error);
-        }
+        await updateProductDatas(
+          {
+            ...values,
+            image: image_IN_ClOUD,
+          },
+          product._id
+        );
       }
     },
   });
+
+  async function postPartnerDatas(values: ProductType) {
+    try {
+      const response = await postProduct(values);
+      //TODO MESAJS GOSTERILMESI
+      SweetAlert("success", "Məhsul əlavə edildi");
+      //?
+      console.log(response);
+    } catch (error) {
+      //TODO MESAJS GOSTERILMESI
+      SweetAlert("success", "Məhsul əlavə edilmədi");
+      //TODO FORM TEMIZLENMESI
+      //?
+      console.error(error);
+    }
+  }
+
+  //! UPDATE PRODUCTS FUNCSIYASI
+  async function updateProductDatas(values: ProductType, id: string) {
+    try {
+      const response = await putProduct(values, id);
+      //TODO MESAJS GOSTERILMESI
+      SweetAlert("success", "Məhsul yeniləndi");
+      //?
+      console.log(response);
+    } catch (error) {
+      SweetAlert("success", "Məhsul yenilənmədi");
+      //?
+      console.error(error);
+    }
+  }
 
   return (
     <div className={styles["form-wrapper"]}>

@@ -13,9 +13,9 @@ const ProductSection: React.FC = (props: Props) => {
   return (
     <div className={styles["products-section"]}>
       <TitleSection
-        firtTitle="Our"
-        lastTitle="Product"
-        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio."
+        firtTitle="Bizim"
+        lastTitle="Məhsullar"
+        description="Müştərilərimiz üçün keyfiyyətli və etibarlı məhsullar seçmişik, uzunmüddətli istifadə və yüksək performans təmin edir."
       />
       <div className={styles.products}>
         {arrr &&

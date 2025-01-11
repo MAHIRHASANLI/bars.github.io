@@ -7,7 +7,7 @@ import React from "react";
 const MapComponent: React.FC = () => {
   return (
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.332083103432!2d49.876502099999996!3d40.42364500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403089fa6317031b%3A0xdbb85db8f5a55ec8!2zQmFycyDEsG7Fn2FhdCBNTUM!5e0!3m2!1saz!2saz!4v1735894422229!5m2!1saz!2saz"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.332083103432!2d49.876502099999996!3d40.42364500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403089fa6317031b%3A0xdbb85db8f5a55ec8!2sBars%20%C4%B0nshaat!5e0!3m2!1saz!2saz!4v1736607519719!5m2!1saz!2saz"
       loading="lazy"
       width="100%"
       height="100%"

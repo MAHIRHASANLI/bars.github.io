@@ -10,25 +10,25 @@ const ContactInformasia = () => {
         <h4>
           <MdLocationOn /> Mağaza ünvanı
         </h4>
-        <p>34/8, East Hukupara </p>
-        <p>Gifirtok, Sadan.</p>
-        <p>Country Name</p>
+        <p>EuroHome Dernegul</p>
+        <p>12 Ələsgər Qayıbov, Bakı 1029</p>
+        <p>Bakıç Azərbaycan</p>
       </div>
       <div className={styles.info}>
         <h4>
           <TbClockHour3 />
           Mağaza Saatları
         </h4>
-        <p>MON - FRIDAY: 8 to 9 PM</p>
-        <p>SAT - SUN: 10 to 8 PM</p>
+        <p>Bazar ertəsi - Şənbə: 09:00–18:00</p>
+        <p>Bazar: Bağlıdır</p>
       </div>
       <div className={styles.info}>
         <h4>
           <FaPhone />
           Əlaqə
         </h4>
-        <p>Phone: +00 111 222 3333</p>
-        <p>Email: support@fruitkha.com</p>
+        <p>Mobil: +994 50 746 0000</p>
+        <p>Email: barsinshaatferdi@gmail.com</p>
       </div>
     </div>
   );

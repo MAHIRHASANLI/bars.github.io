@@ -1,5 +1,6 @@
 import { getAllProduct } from "@/api/product_request";
 import ProductsComponent from "@/components/products";
+import TitleSection from "@/components/section_title";
 import ProductLayoutComponent from "@/product_layout";
 import { ProductType } from "@/types";
 

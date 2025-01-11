@@ -1,4 +1,5 @@
-import styles from "./index.module.css"; // CSS modulunu import et
+import Link from "next/link";
+import styles from "./index.module.css";
 
 const Footer = () => {
   return (
@@ -8,41 +9,37 @@ const Footer = () => {
           <div className={styles.footerColumn}>
             <h3>Haqqımızda</h3>
             <p>
-              Ut enim ad minim veniam, perspiciatis unde omnis iste natus error
-              sit voluptatem accusantium doloremque laudantium.
+              Bars İnşaat qaz avadanlıqları, yapışdırıcılar və tikinti
+              materiallarının geniş çeşidini təklif edir. Yüksək keyfiyyətli və
+              etibarlı məhsullarla tikinti layihələrinizi tamamlayın.
             </p>
           </div>
           <div className={styles.footerColumn}>
             <h3>Əlaqə</h3>
-            <p>34/8, East Hukupara, Gifirtok, Sadan.</p>
-            <p>support@fruitkha.com</p>
-            <p>+00 111 222 3333</p>
+            <p>EuroHome Dernegul, 12 Ələsgər Qayıbov</p>
+            <p>barsinshaatferdi@gmail.com</p>
+            <p>+994 50 746 0000</p>
           </div>
           <div className={styles.footerColumn}>
             <h3>Səhifələr</h3>
             <ul>
               <li>
-                <a href="#">Ana səhifə</a>
+                <Link href="/">Ana səhifə</Link>
               </li>
               <li>
-                <a href="#">Haqqımızda</a>
+                <Link href="/about">Haqqımızda</Link>
               </li>
               <li>
-                <a href="#">Mağaza</a>
+                <Link href="/partners">Tərəfdaşlar</Link>
               </li>
               <li>
-                <a href="#">Tərəfdaşlar</a>
-              </li>
-              <li>
-                <a href="#">Əlaqə</a>
+                <Link href="/contact">Əlaqə</Link>
               </li>
             </ul>
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <p>
-            Müəllif hüquqları © 2024 - Mahir Hasani. Bütün hüquqlar qorunur.
-          </p>
+          <p>Müəllif hüquqları © 2024 - Bütün hüquqlar qorunur.</p>
         </div>
       </div>
     </footer>
