@@ -3,12 +3,13 @@ import { Message, MessageTypes } from "@/types";
 
 const query: string = "message";
 
-export const GetAllMessage = async (): Promise<Message> => {
+export const GetAllMessage = async (): Promise<Message | any> => {
   try {
     const response = await fetch(`${BASE_URL}/${query}`);
     return await response.json();
   } catch (error) {
-    throw new Error("Mesajlar Getirilmedi!");
+    new Error("Mesajlar Getirilmedi!");
+    console.error(error);
   }
   // return await baseGetRequest("", query);
 };

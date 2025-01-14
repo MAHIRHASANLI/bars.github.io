@@ -9,12 +9,15 @@ import {
 
 const query: string = "products";
 
-export const getAllProduct = async (category: string): Promise<Products> => {
+export const getAllProduct = async (
+  category: string
+): Promise<Products | any> => {
   try {
     const response = await fetch(`${BASE_URL}/${query}?category=${category}`);
     return await response.json();
   } catch (error) {
-    throw new Error("Mehsuular getirilmedi!");
+    new Error("Mehsuular getirilmedi!");
+    console.error(error);
   }
   // return await baseGetRequest(category, query);
 };
