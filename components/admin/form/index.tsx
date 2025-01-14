@@ -56,6 +56,7 @@ const FormComponent: React.FC<FormComponentProps> = ({
     },
   });
 
+  //! POST PRODUCTS FUNCSIYASI
   async function postPartnerDatas(values: ProductType) {
     try {
       const response = await postProduct(values);

@@ -1,0 +1,53 @@
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 0 50px;
+}
+
+.item {
+  box-sizing: border-box;
+  padding: 20px;
+  min-width: 300px;
+  max-width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.item p {
+  font-weight: 600;
+  box-sizing: border-box;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.item span {
+  font-weight: 400;
+}
+
+.button button {
+  display: inline-block;
+  margin: auto;
+  margin: 10px;
+
+  border: 1px solid #006738;
+  padding: 5px 50px;
+  background: transparent;
+  transition: 0.1s linear;
+}
+
+.button button:hover {
+  color: #ffff;
+  background-color: #006738;
+}
+
+@media screen and (max-width: 800px) {
+  .table {
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+  }
+  .item {
+    padding: 10px;
+    width: 100%;
+  }
+}

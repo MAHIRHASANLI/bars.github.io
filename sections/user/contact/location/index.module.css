@@ -1,0 +1,27 @@
+.find-location {
+  padding-top: 100px;
+  padding-bottom: 30px;
+  background-color: #162133;
+}
+
+.find-location h2 {
+  color: #ffff;
+}
+
+.map {
+  height: 90vh;
+  width: 100%;
+}
+
+@media (max-width: 850px) {
+  .find-location {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    background-color: #162133;
+  }
+
+  .map {
+    height: 70vh;
+    width: 100%;
+  }
+}

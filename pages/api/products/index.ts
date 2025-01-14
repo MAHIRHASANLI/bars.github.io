@@ -1,8 +1,8 @@
 import dbConnect from "@/mongoDB/db_connect";
-import Product from "@/mongoDB/db_models";
+import Product from "@/mongoDB/product_models";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async function getProducts(
+export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -22,14 +22,14 @@ export default async function getProducts(
         res.status(404).json({ message: "No products found!" });
       }
     } catch (error: any) {
-      res.status(404).json({ error });
+      res.status(404).json({ message: error });
     }
   } else if (req.method === "POST") {
     try {
       const product = await Product.create(req.body);
       res.status(201).json({ message: "Product added successfully!", product });
     } catch (error: any) {
-      res.status(404).json({ error });
+      res.status(404).json({ message: error });
     }
   } else if (req.method === "DELETE") {
     try {
@@ -39,7 +39,7 @@ export default async function getProducts(
         product,
       });
     } catch (error: any) {
-      res.status(404).json({ error });
+      res.status(404).json({ message: error });
     }
   }
 }

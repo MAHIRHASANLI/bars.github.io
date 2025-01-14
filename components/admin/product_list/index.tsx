@@ -1,15 +1,35 @@
 "use client";
-import TitleSection from "@/components/section_title";
+import TitleSection from "@/components/user/section_title";
 import React from "react";
 import styles from "./index.module.css";
 
 import ProductComponent from "../product";
 import FormComponent from "../form";
 import { ProductType } from "@/types";
+import { getAllProduct } from "@/api/product_request";
+import { FaManatSign } from "react-icons/fa6";
 
 const ProductsListComponent = () => {
+  //! SELECTED DATA
+  const [selectedCategory, setSelectedCategory] =
+    React.useState<string>("tikinti");
+  const handleSelectOption = (event: any) => {
+    setSelectedCategory(event.target.value.trim());
+  };
   //! PRODUCTLAR
   const [products, setProducts] = React.useState<ProductType[]>([]);
+
+  const [filteredProducts, setFilteredProducts] = React.useState<ProductType[]>(
+    []
+  );
+
+  React.useEffect(() => {
+    if (selectedCategory)
+      getAllProduct(selectedCategory).then(({ products }) => {
+        setProducts(products);
+        setFilteredProducts(products);
+      });
+  }, [selectedCategory]);
 
   //! FORM GOSTERMEK VE GIZLEMEK
   const [product, setProduct] = React.useState<any>(null);
@@ -21,31 +41,24 @@ const ProductsListComponent = () => {
     setIsOpenForm((prev) => !prev);
   };
 
+  //! SEARCH PRODUCT
+  const handleSearchProduct = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value.trim().toLowerCase();
+    if (value == "") {
+      setFilteredProducts(products);
+    } else {
+      const filtered = products.filter((product) =>
+        product.name.toLowerCase().trim().includes(value)
+      );
+      setFilteredProducts(filtered);
+    }
+  };
+
   //! FORMU GIZLEMEK
   const closeForm = () => {
     setIsOpenForm(false);
   };
 
-  //! SEARCH PRODUCT
-  const handleSearchProduct = (event: React.ChangeEvent<HTMLInputElement>) => {
-    products.forEach((product: ProductType) => {
-      if (
-        product.name
-          .toLowerCase()
-          .trim()
-          .includes(event.target.value.toLowerCase().trim())
-      ) {
-        setProducts(
-          products.filter((product) =>
-            product.name
-              .toLowerCase()
-              .trim()
-              .includes(event.target.value.toLowerCase().trim())
-          )
-        );
-      }
-    });
-  };
   return (
     <section>
       {isOpenForm && <FormComponent product={product} closeForm={closeForm} />}
@@ -53,7 +66,6 @@ const ProductsListComponent = () => {
         <div>
           <TitleSection firtTitle="Məhsullar" lastTitle="" description="" />
         </div>
-
         <div className={styles["table-wrapper"]}>
           <div className={styles["search-add"]}>
             <div className={styles["serch-input"]}>
@@ -63,7 +75,12 @@ const ProductsListComponent = () => {
                 onChange={handleSearchProduct}
               />
             </div>
-            <div>
+            <div className={styles["select-btn"]}>
+              <select className={styles.select} onChange={handleSelectOption}>
+                <option value="tikinti">Tikinti Materialları</option>
+                <option value="gaz">Qaz avadanlıqları</option>
+              </select>
+
               <button className={styles["btn-add"]} onClick={toggleForm}>
                 Məhsul əlavə et
               </button>
@@ -75,14 +92,15 @@ const ProductsListComponent = () => {
                 <th>Şəkil</th>
                 <th>Ad</th>
                 <th>Kateqoriya</th>
-                <th>Qiymət</th>
+                <th>
+                  Qiymət <FaManatSign />
+                </th>
                 <th>Əməliyyatlar</th>
               </tr>
             </thead>
             {/*!! PRODUCTLAR */}
             <ProductComponent
-              products={products}
-              setProducts={setProducts}
+              filteredProducts={filteredProducts}
               setProduct={setProduct}
               toggleForm={toggleForm}
             />

@@ -1,5 +1,5 @@
 import dbConnect from "@/mongoDB/db_connect";
-import Product from "@/mongoDB/db_models";
+import Product from "@/mongoDB/product_models";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -24,7 +24,7 @@ export default async function handler(
         product,
       });
     } catch (error: any) {
-      res.status(500).json({ error: "Failed to update the product" });
+      res.status(500).json({ message: "Failed to update the product" });
     }
   } else if (req.method === "DELETE") {
     try {
@@ -37,7 +37,7 @@ export default async function handler(
         product,
       });
     } catch (error: any) {
-      res.status(500).json({ error: "Failed to delete the product" });
+      res.status(500).json({ message: "Failed to delete the product" });
     }
   } else {
     res.setHeader("Allow", ["GET", "PUT"]);

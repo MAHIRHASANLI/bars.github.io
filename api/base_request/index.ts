@@ -1,17 +1,34 @@
-import { ProductType } from "@/types";
+import { MessageTypes, ProductType } from "@/types";
 
-const BASE_URL: string = "http://localhost:3000/api/products";
+export const BASE_URL: string = "http://localhost:3000/api";
 
-export const baseGetRequest = async (
-  category: string
-): Promise<{ products: ProductType[]; message: string }> => {
-  const response = await fetch(`${BASE_URL}?category=${category}`);
-  const data = await response.json();
-  return data;
-};
+// export const baseGetRequest = async (
+//   category: string,
+//   query: string
+// ): Promise<BaseRequestTypes> => {
+//   try {
+//     let url = `${BASE_URL}/${query}`;
+//     if (category) {
+//       url += `?category=${category}`;
+//     }
 
-export const basePostRequest = async (data: ProductType) => {
-  const response = await fetch(BASE_URL, {
+//     const response = await fetch(url);
+//     const data: BaseRequestTypes = await response.json();
+//     console.log(data);
+
+//     return data;
+//   } catch (error) {
+//     console.error("Sorguda xəta baş verdi:", error);
+//     throw new Error(`Fetch error: ${error}`);
+//     return { error: "Sorğu zamanı xəta baş verdi." };
+//   }
+// };
+
+export const basePostRequest = async (
+  data: MessageTypes | ProductType,
+  query: string
+) => {
+  const response = await fetch(`${BASE_URL}/${query}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,8 +39,12 @@ export const basePostRequest = async (data: ProductType) => {
   return await response.json();
 };
 
-export const basePutRequest = async (data: ProductType, id: string) => {
-  const response = await fetch(`${BASE_URL}/${id}`, {
+export const basePutRequest = async (
+  data: MessageTypes | ProductType,
+  id: string,
+  query: string
+) => {
+  const response = await fetch(`${BASE_URL}/${query}/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -34,14 +55,15 @@ export const basePutRequest = async (data: ProductType, id: string) => {
   return await response.json();
 };
 
-export const baseDeleteRequest = async (id: string) => {
-  const response = await fetch(`${BASE_URL}/${id}`, {
+export const baseDeleteRequest = async (id: string, query: string) => {
+  const response = await fetch(`${BASE_URL}/${query}/${id}`, {
     method: "DELETE",
   });
 
   return await response.json();
 };
 
+//!basePostRequestCloudinary
 export const basePostRequestCloudinary = async (image: any) => {
   const formData = new FormData();
   formData.append("file", image);

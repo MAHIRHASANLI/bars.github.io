@@ -1,0 +1,126 @@
+.form {
+  margin-top: 20px;
+}
+
+.inputs {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.form .input {
+  width: 48%;
+}
+
+.form input {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 14px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.form span {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: red;
+  font-weight: 300;
+}
+
+.form .textarea {
+  width: 99%;
+}
+
+.form .textarea span {
+  margin-bottom: 15px;
+}
+
+.form textarea {
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  height: 200px;
+  border-radius: 3px;
+  width: 100%;
+  resize: none;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  font-size: 14px;
+}
+
+.form input:active,
+.form input:focus,
+.form textarea:active,
+.form textarea:focus {
+  border-color: #006738;
+  outline: none;
+}
+
+.form .button {
+  padding: 16px 50px;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: #006738;
+  border: none;
+  color: #ffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.2s all linear;
+  box-shadow: rgb(38, 57, 77) 0px 10px 10px -10px;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 800px) {
+  .form {
+    margin-top: 20px;
+  }
+
+  .inputs {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .form .input {
+    width: 50%;
+  }
+  .form .textarea {
+    width: 100%;
+  }
+
+  .form input {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .form span {
+    font-size: 10px;
+  }
+
+  .form .textarea span {
+    margin-bottom: 10px;
+  }
+
+  .form textarea {
+    font-size: 12px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 120px;
+  }
+
+  .form input::placeholder,
+  .form textarea::placeholder {
+    font-size: 12px;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 12px;
+  }
+}

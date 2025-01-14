@@ -1,31 +1,37 @@
-import { ProductType } from "@/types";
+import { Products, ProductType } from "@/types";
 import {
+  BASE_URL,
   baseDeleteRequest,
-  baseGetRequest,
   basePostRequest,
   basePostRequestCloudinary,
   basePutRequest,
 } from "../base_request";
 
-export const getAllProduct = async (
-  category: string
-): Promise<{ products: ProductType[]; message: string }> => {
-  return await baseGetRequest(category);
+const query: string = "products";
+
+export const getAllProduct = async (category: string): Promise<Products> => {
+  try {
+    const response = await fetch(`${BASE_URL}/${query}?category=${category}`);
+    return await response.json();
+  } catch (error) {
+    throw new Error("Mehsuular getirilmedi!");
+  }
+  // return await baseGetRequest(category, query);
 };
 
 export const postProduct = async (data: ProductType) => {
-  return await basePostRequest(data);
+  return await basePostRequest(data, query);
 };
 
 export const putProduct = async (data: ProductType, id: string) => {
-  return await basePutRequest(data, id);
+  return await basePutRequest(data, id, query);
 };
 
 export const deleteProduct = async (id: string) => {
-  return await baseDeleteRequest(id);
+  return await baseDeleteRequest(id, query);
 };
 
 //! POST CLOUDINARY
-export const postCloudinaryImg = async (image: any) => {
+export const postCloudinaryImg = async (image: string) => {
   return await basePostRequestCloudinary(image);
 };

@@ -6,23 +6,18 @@ import { deleteProduct, getAllProduct } from "@/api/product_request";
 
 import { ProductType } from "@/types";
 import SweetAlert from "@/utils/sweet_Alert";
+import { FaManatSign } from "react-icons/fa6";
 interface ProductComponentProps {
   toggleForm: (event: React.MouseEvent<HTMLButtonElement>) => void;
   setProduct: any;
-  products: ProductType[];
-  setProducts: any;
+  filteredProducts: ProductType[];
 }
 
 const ProductComponent: React.FC<ProductComponentProps> = ({
   toggleForm,
   setProduct,
-  products,
-  setProducts,
+  filteredProducts,
 }) => {
-  React.useEffect(() => {
-    getAllProduct("gaz").then(({ products }) => setProducts(products));
-  }, []);
-
   //! MƏHSULU SİLMƏK
   const handleRemoveProduct = async (event: any, id: string | undefined) => {
     if (id) {
@@ -43,20 +38,24 @@ const ProductComponent: React.FC<ProductComponentProps> = ({
   };
   return (
     <tbody className={styles.tbody}>
-      {products &&
-        products.map((product: ProductType, i: number) => (
+      {filteredProducts &&
+        filteredProducts.map((product: ProductType, i: number) => (
           <tr className={styles.product} key={i}>
-            <th className={styles["product-img"]}>
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+            <th>
+              <div className={styles["product-img"]}>
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
             </th>
-            <td>{product.name}</td>
+            <td style={{ maxWidth: "250px" }}>{product.name}</td>
             <td>{product.brand}</td>
-            <td>{product.price}</td>
+            <td>
+              {product.price} <FaManatSign />
+            </td>
             <td style={{ textAlign: "center" }}>
               <button
                 className={styles["btn-put"]}
