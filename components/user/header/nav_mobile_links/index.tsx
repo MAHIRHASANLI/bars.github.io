@@ -16,7 +16,7 @@ const NavLinkMobile: React.FC<Props> = ({ isActive }) => {
         <Link href="/">Ana Səhifə</Link>
         <Link href="/about">Haqqımızda</Link>
         <Link href="/partners">Tərəfdaşlar</Link>
-        <Link href="/products/qaz_avadanlıqları">Qaz Avadanlıqları</Link>
+        <Link href="/products/qaz_avadanliqlari">Qaz Avadanlıqları</Link>
         <Link href="/products/tikinti_materiallari">Tikinti Materialları</Link>
         <Link href="/contact">Əlaqə</Link>
       </div>
