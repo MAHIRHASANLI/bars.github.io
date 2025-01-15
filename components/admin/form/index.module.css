@@ -91,3 +91,39 @@
   display: block;
   text-align: left !important;
 }
+
+@media (max-width: 800px) {
+  .form-wrapper {
+    width: 90%; /* Formu kiçik ekranlarda daha uyğun ölçüdə göstərir */
+    padding: 20px; /* Paddingi azaldırıq ki, form daha səliqəli görünsün */
+  }
+
+  .input-group input,
+  .select-file input,
+  .select-file select {
+    font-size: 12px; /* Font ölçüsünü azaldırıq */
+    padding: 10px; /* Inputların hündürlüyünü azaltmaq üçün padding azaldılır */
+  }
+
+  .input-file input {
+    padding: 10px; /* File input üçün də padding azaldılır */
+  }
+
+  .btn-submit {
+    padding: 10px 15px; /* Buttonun paddingini azaldırıq */
+    font-size: 12px; /* Buttonun yazı ölçüsünü azaldırıq */
+  }
+
+  .input-group {
+    margin-top: 10px; /* Input aralarındakı məsafəni azaldırıq */
+  }
+
+  .close {
+    padding: 5px 10px; /* Bağlama düyməsinin ölçüsünü azaldırıq */
+    font-size: 14px; /* Bağlama düyməsinin yazı ölçüsünü kiçildir */
+  }
+
+  .form-wrapper span {
+    font-size: 10px; /* Xətaları göstərən span-ın yazı ölçüsünü azaldırıq */
+  }
+}
