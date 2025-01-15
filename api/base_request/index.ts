@@ -1,6 +1,6 @@
 import { MessageTypes, ProductType } from "@/types";
 
-export const BASE_URL: string = "http://bars.com.az/api";
+export const BASE_URL: string = "https://bars.com.az/api";
 
 // export const baseGetRequest = async (
 //   category: string,
