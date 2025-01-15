@@ -19,10 +19,6 @@ const AboutSection = (props: Props) => {
             />
             <div>
               <p>
-                Azərbaycan iqtisadiyyatının inkişafı, dövlət tərəfindən həyata
-                keçirilən uğurlu iqtisadi islahatlar və yaradılmış əlverişli
-                sərmayə mühiti ölkəmizin dünya iqtisadiyyatına inteqrasiyasını
-                mümkün etmişdir. <br />
                 BARS Mağazası 2024-cü ildə qurulmuşdur və yarandığı gündən
                 müştərilərə müasir tələblərə cavab verən məhsullar və xidmətlər
                 təklif edir. Məqsədimiz, müştərilərimizə ən keyfiyyətli
@@ -30,11 +26,13 @@ const AboutSection = (props: Props) => {
                 məmnuniyyətini qazanmaqdır. Bu günə qədər bu missiyamızı uğurla
                 yerinə yetirdiyimiz üçün qürur duyuruq.
                 <br />
+                <br />
                 Şirkətimiz qaz, su və kimyəvi yapışdırıcı məhsullarının (qranit
                 daş və mərmər yapışdırıcıları, silikonlar, divar kağızı
                 yapışdırıcıları, PVC-U boru yapışdırıcısı, sayğaclar,
                 tənzimləyicilər, siqnal cihazları, flanşlar, detektorlar və s.)
                 satışını və servisini həyata keçirir.
+                <br />
                 <br />
                 BARS Azərbaycanda NUBER ONE, Elster, Siqnal, FMG, Baypa, Tork,
                 Madas və Aterma şirkətlərinin rəsmi nümayəndəsidir. Şirkətimiz

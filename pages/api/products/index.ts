@@ -10,6 +10,7 @@ export default async function handle(
   if (req.method === "GET") {
     try {
       const { category } = req.query;
+      console.log("category", category);
 
       const products = await Product.find(category ? { category } : {});
 
