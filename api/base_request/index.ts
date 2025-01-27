@@ -1,29 +1,8 @@
 import { MessageTypes, ProductType } from "@/types";
 
 export const BASE_URL: string = "https://www.bars.com.az/api";
-// "https://www.bars.com.az/api";
-
-// export const baseGetRequest = async (
-//   category: string,
-//   query: string
-// ): Promise<BaseRequestTypes> => {
-//   try {
-//     let url = `${BASE_URL}/${query}`;
-//     if (category) {
-//       url += `?category=${category}`;
-//     }
-
-//     const response = await fetch(url);
-//     const data: BaseRequestTypes = await response.json();
-//     console.log(data);
-
-//     return data;
-//   } catch (error) {
-//     console.error("Sorguda xəta baş verdi:", error);
-//     throw new Error(`Fetch error: ${error}`);
-//     return { error: "Sorğu zamanı xəta baş verdi." };
-//   }
-// };
+//  "https://www.bars.com.az/api";
+// || "http://localhost:3000/api";
 
 export const basePostRequest = async (
   data: MessageTypes | ProductType,
@@ -61,7 +40,12 @@ export const baseDeleteRequest = async (id: string, query: string) => {
     method: "DELETE",
   });
 
-  return await response.json();
+  if (!response.ok) {
+    throw new Error(`Failed to delete: ${response.status}`);
+  }
+
+  const text = await response.text();
+  return text ? JSON.parse(text) : null;
 };
 
 //!basePostRequestCloudinary

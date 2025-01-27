@@ -34,13 +34,13 @@ export default async function handler(
       }
       res.status(200).json({
         message: "The product has been successfully removed!",
-        product,
+        // product,
       });
     } catch (error: any) {
       res.status(500).json({ message: "Failed to delete the product" });
     }
   } else {
-    res.setHeader("Allow", ["GET", "PUT"]);
+    res.setHeader("Allow", ["DELETE", "PUT"]);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
