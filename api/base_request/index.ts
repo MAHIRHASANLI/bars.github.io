@@ -53,14 +53,11 @@ export const basePostRequestCloudinary = async (image: any) => {
   const formData = new FormData();
   formData.append("file", image);
   formData.append("upload_preset", "barsproduct");
-  formData.append(
-    "cloud_name",
-    process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || ""
-  );
+  formData.append("cloud_name", process.env.CLOUDINARY_CLOUD_NAME || "");
 
   // Cloudinary API-ə post request edin
   const res = await fetch(
-    `https://api.cloudinary.com/v1_1/dwefitou2/image/upload`,
+    `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload`,
     {
       method: "POST",
       body: formData,
