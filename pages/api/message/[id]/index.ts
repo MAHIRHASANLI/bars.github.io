@@ -11,20 +11,16 @@ export default async function handler(
   await dbConnect();
 
   if (req.method === "DELETE") {
-    try {
-      const responseMessage = await Message.findByIdAndDelete(id);
-      if (!responseMessage) {
-        return res.status(404).json({ message: "message not found" });
-      }
-      res.status(200).json({
-        message: "The message has been successfully removed!",
-        responseMessage,
-      });
-    } catch (error: any) {
-      res.status(500).json({ message: "Failed to delete the product" });
+    const responseMessage = await Message.findByIdAndDelete(id);
+    if (!responseMessage) {
+      return res.status(404).json({ message: "message not found" });
     }
+    res.status(200).json({
+      message: "The message has been successfully removed!",
+      responseMessage,
+    });
   } else {
-    res.setHeader("Allow", ["GET", "PUT"]);
+    res.setHeader("Allow", ["DELETE"]);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }

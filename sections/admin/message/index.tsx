@@ -16,7 +16,6 @@ const MessageSection = (props: Props) => {
     if (confirm("Əminsiz?")) {
       try {
         const response = await removeMessage(id || "");
-
         if (response && response.success) {
           SweetAlert("error", "Silmə uğursuz oldu!");
         } else {

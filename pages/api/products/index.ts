@@ -25,21 +25,10 @@ export default async function handle(
       res.status(404).json({ message: error });
     }
   } else if (req.method === "POST") {
-    try {
-      const product = await Product.create(req.body);
-      res.status(201).json({ message: "Product added successfully!", product });
-    } catch (error: any) {
-      res.status(404).json({ message: error });
-    }
-  } else if (req.method === "DELETE") {
-    try {
-      const product = await Product.findByIdAndDelete(req.query.id);
-      res.status(201).json({
-        message: "The product has been successfully removed!",
-        product,
-      });
-    } catch (error: any) {
-      res.status(404).json({ message: error });
-    }
+    const products = await Product.create(req.body);
+    res.status(201).json({ message: "Product added successfully!", products });
+  } else {
+    res.setHeader("Allow", ["GET", "POST"]);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
