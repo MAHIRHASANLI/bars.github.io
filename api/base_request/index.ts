@@ -24,28 +24,56 @@ export const basePutRequest = async (
   id: string,
   query: string
 ) => {
-  const response = await fetch(`${BASE_URL}/${query}/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+  try {
+    const response = await fetch(`${BASE_URL}/${query}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-  return await response.json();
+    if (!response.ok) {
+      throw new Error(`Failed to update: ${response.status}`);
+    }
+
+    // JSON cavabını yoxlayın
+    const responseData = await response.json();
+    return responseData; // JSON cavabını geri qaytarırıq
+  } catch (error) {
+    console.error("Error in PUT request:", error);
+    throw error; // Xətanı frontend-ə ötürürük
+  }
 };
 
 export const baseDeleteRequest = async (id: string, query: string) => {
-  const response = await fetch(`${BASE_URL}/${query}/${id}`, {
-    method: "DELETE",
-  });
+  try {
+    const response = await fetch(`${BASE_URL}/${query}/${id}`, {
+      method: "DELETE",
+    });
 
-  if (!response.ok) {
-    throw new Error(`Failed to delete: ${response.status}`);
+    if (!response.ok) {
+      throw new Error(`Failed to delete: ${response.status}`);
+    }
+
+    const text = await response.text();
+
+    // Cavab boşdursa, null qaytarılır
+    if (!text) {
+      return null;
+    }
+
+    // Əgər cavab varsa, JSON çevrilir
+    try {
+      return JSON.parse(text);
+    } catch (error) {
+      console.error("Failed to parse JSON:", error);
+      throw new Error("Invalid JSON response");
+    }
+  } catch (error) {
+    console.error("Error in DELETE request:", error);
+    throw error; // Xətanı frontend-ə ötürürük
   }
-
-  const text = await response.text();
-  return text ? JSON.parse(text) : null;
 };
 
 //!basePostRequestCloudinary

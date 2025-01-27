@@ -16,7 +16,7 @@ export default async function handler(
   const { id } = req.query;
 
   // CORS başlıqlarını əlavə edin
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "https://www.bars.com.az/");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
