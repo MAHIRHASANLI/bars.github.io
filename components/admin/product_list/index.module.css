@@ -7,7 +7,7 @@
 }
 
 .table {
-  min-width: 65%;
+  min-width: 80%;
   max-width: 80%;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -32,7 +32,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  width: 65%;
+  width: 80%;
 }
 
 .serch-input {

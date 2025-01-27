@@ -95,7 +95,7 @@
 @media (max-width: 800px) {
   .form-wrapper {
     width: 90%; /* Formu kiçik ekranlarda daha uyğun ölçüdə göstərir */
-    padding: 20px; /* Paddingi azaldırıq ki, form daha səliqəli görünsün */
+    padding: 10px; /* Paddingi azaldırıq ki, form daha səliqəli görünsün */
   }
 
   .input-group input,

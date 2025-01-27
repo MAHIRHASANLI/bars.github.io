@@ -10,23 +10,23 @@ export interface IMessage extends Document {
 const messageSchema: Schema = new mongoose.Schema({
   fullName: {
     type: String,
-    require: true,
+    required: true,
   },
   email: {
     type: String,
-    require: true,
+    required: true,
   },
   phone: {
     type: Number,
-    require: true,
+    required: true,
   },
   topic: {
     type: String,
-    require: false,
+    required: false,
   },
   message: {
     type: String,
-    require: true,
+    required: true,
   },
 });
 

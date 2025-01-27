@@ -24,11 +24,14 @@ const ProductsListComponent = () => {
   );
 
   React.useEffect(() => {
+    // function getData() {
     if (selectedCategory)
       getAllProduct(selectedCategory).then(({ products }) => {
         setProducts(products);
         setFilteredProducts(products);
       });
+    // }
+    // getData();
   }, [selectedCategory]);
 
   //! FORM GOSTERMEK VE GIZLEMEK

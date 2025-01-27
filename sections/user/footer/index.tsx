@@ -17,7 +17,7 @@ const Footer = () => {
           <div className={styles.footerColumn}>
             <h3>Əlaqə</h3>
             <p>EuroHome Dernegul, 12 Ələsgər Qayıbov</p>
-            <p>barsinshaatferdi@gmail.com</p>
+            {/* <p>barsinshaatferdi@gmail.com</p> */}
             <p>+994 50 746 0000</p>
           </div>
           <div className={styles.footerColumn}>
@@ -39,7 +39,16 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <p>Müəllif hüquqları © 2024 - Bütün hüquqlar qorunur.</p>
+          <p>
+            Müəllif hüquqları © 2024 - Bütün hüquqlar qorunur.{" "}
+            <Link
+              href="https://mahirhasani.vercel.app"
+              style={{ color: "#006738", fontSize: "16px" }}
+            >
+              Mahirhasani.dev
+            </Link>{" "}
+            tərəfindən hazırlanıb.
+          </p>
         </div>
       </div>
     </footer>
