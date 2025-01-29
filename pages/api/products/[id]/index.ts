@@ -16,6 +16,7 @@ export default async function handler(
   console.log("Method:", req.method);
   console.log("Headers:", req.headers);
   console.log("Query Params:", req.query);
+  console.log(req.url);
 
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
