@@ -54,8 +54,6 @@ export const baseDeleteRequest = async (id: string, query: string) => {
     }
 
     return await response.json();
-
-    }
   } catch (error) {
     console.error("Error in DELETE request:", error);
     throw error; // Xətanı frontend-ə ötürürük
