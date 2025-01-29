@@ -1,6 +1,5 @@
 import { MessageTypes, ProductType } from "@/types";
 
-export const BASE_URL: string = "https://www.bars.com.az/api";
 //  "https://www.bars.com.az/api";
 // || "http://localhost:3000/api";
 
@@ -8,7 +7,7 @@ export const basePostRequest = async (
   data: MessageTypes | ProductType,
   query: string
 ) => {
-  const response = await fetch(`${BASE_URL}/${query}`, {
+  const response = await fetch(`${process.env.BASE_URL}/${query}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -25,7 +24,7 @@ export const basePutRequest = async (
   query: string
 ) => {
   try {
-    const response = await fetch(`${BASE_URL}/${query}/${id}`, {
+    const response = await fetch(`${process.env.BASE_URL}/${query}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +47,7 @@ export const basePutRequest = async (
 
 export const baseDeleteRequest = async (id: string, query: string) => {
   try {
-    const response = await fetch(`${BASE_URL}/${query}/${id}`, {
+    const response = await fetch(`${process.env.BASE_URL}/${query}/${id}`, {
       method: "DELETE",
     });
 

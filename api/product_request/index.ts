@@ -1,6 +1,5 @@
 import { Products, ProductType } from "@/types";
 import {
-  BASE_URL,
   baseDeleteRequest,
   basePostRequest,
   basePostRequestCloudinary,
@@ -13,7 +12,9 @@ export const getAllProduct = async (
   category: string
 ): Promise<Products | any> => {
   try {
-    const response = await fetch(`${BASE_URL}/${query}?category=${category}`);
+    const response = await fetch(
+      `${process.env.BASE_URL}/${query}?category=${category}`
+    );
     return await response.json();
   } catch (error) {
     new Error("Mehsuular getirilmedi!");

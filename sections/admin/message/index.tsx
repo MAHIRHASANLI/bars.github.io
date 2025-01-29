@@ -9,8 +9,13 @@ type Props = {};
 
 const MessageSection = (props: Props) => {
   const [messages, setMessages] = React.useState<MessageTypes[]>([]);
+  const [notFoundSMS, setNotFoundSMS] = React.useState<string>();
   React.useEffect(() => {
-    GetAllMessage().then((data) => setMessages(data.responseMessage));
+    GetAllMessage().then(({ responseMessage }) => {
+      console.log("responseMessage: ", responseMessage);
+      if (responseMessage.length > 0) setMessages(responseMessage);
+      else setNotFoundSMS("Gonderilmish mesaj yoxdur!");
+    });
   }, []);
   async function handleDelete(e: any, id: string | undefined) {
     if (confirm("Əminsiz?")) {
@@ -36,33 +41,39 @@ const MessageSection = (props: Props) => {
         description="Göndərilmiş bütün mesajlar buradadır!"
       />
       <div className={styles.table}>
-        {messages.map((message, i) => (
-          <div className={styles.item} key={i}>
-            <div>
-              <p>
-                Adı Soy adı: <span>{message.fullName}</span>
-              </p>
+        {notFoundSMS ? (
+          <h2>{notFoundSMS}</h2>
+        ) : (
+          messages.map((message, i) => (
+            <div className={styles.item} key={i}>
+              <div>
+                <p>
+                  Adı Soy adı: <span>{message.fullName}</span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  Email: <span>{message.email}</span>
+                </p>
+              </div>{" "}
+              <div>
+                <p>
+                  Mövzu: <span>{message.topic}</span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  Mesajı: <span>{message.message}</span>
+                </p>
+              </div>{" "}
+              <div className={styles.button}>
+                <button onClick={(e) => handleDelete(e, message._id)}>
+                  Sil
+                </button>
+              </div>
             </div>
-            <div>
-              <p>
-                Email: <span>{message.email}</span>
-              </p>
-            </div>{" "}
-            <div>
-              <p>
-                Mövzu: <span>{message.topic}</span>
-              </p>
-            </div>
-            <div>
-              <p>
-                Mesajı: <span>{message.message}</span>
-              </p>
-            </div>{" "}
-            <div className={styles.button}>
-              <button onClick={(e) => handleDelete(e, message._id)}>Sil</button>
-            </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

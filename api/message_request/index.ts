@@ -1,11 +1,11 @@
-import { BASE_URL, baseDeleteRequest, basePostRequest } from "../base_request";
+import { baseDeleteRequest, basePostRequest } from "../base_request";
 import { Message, MessageTypes } from "@/types";
 
 const query: string = "message";
 
 export const GetAllMessage = async (): Promise<Message | any> => {
   try {
-    const response = await fetch(`${BASE_URL}/${query}`);
+    const response = await fetch(`${process.env.BASE_URL}/${query}`);
     return await response.json();
   } catch (error) {
     new Error("Mesajlar Getirilmedi!");
