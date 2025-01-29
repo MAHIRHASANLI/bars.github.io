@@ -36,12 +36,10 @@ export const basePutRequest = async (
       throw new Error(`Failed to update: ${response.status}`);
     }
 
-    // JSON cavabını yoxlayın
-    const responseData = await response.json();
-    return responseData; // JSON cavabını geri qaytarırıq
+    return await response.json();
   } catch (error) {
     console.error("Error in PUT request:", error);
-    throw error; // Xətanı frontend-ə ötürürük
+    throw error;
   }
 };
 
@@ -55,19 +53,8 @@ export const baseDeleteRequest = async (id: string, query: string) => {
       throw new Error(`Failed to delete: ${response.status}`);
     }
 
-    const text = await response.text();
+    return await response.json();
 
-    // Cavab boşdursa, null qaytarılır
-    if (!text) {
-      return null;
-    }
-
-    // Əgər cavab varsa, JSON çevrilir
-    try {
-      return JSON.parse(text);
-    } catch (error) {
-      console.error("Failed to parse JSON:", error);
-      throw new Error("Invalid JSON response");
     }
   } catch (error) {
     console.error("Error in DELETE request:", error);
