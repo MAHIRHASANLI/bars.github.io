@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import styles from "./index.module.css";
-import { deleteProduct, getAllProduct } from "@/api/product_request";
+import { deleteProduct, getAllProduct } from "@/api_requests/product_request";
 
 import { ProductType } from "@/types";
 import SweetAlert from "@/utils/sweet_Alert";

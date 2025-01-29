@@ -1,5 +1,5 @@
 "use client";
-import { GetAllMessage, removeMessage } from "@/api/message_request";
+import { GetAllMessage, removeMessage } from "@/api_requests/message_request";
 import React from "react";
 import styles from "./index.module.css";
 import { MessageTypes } from "@/types";

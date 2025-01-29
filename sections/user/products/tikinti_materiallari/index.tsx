@@ -1,5 +1,5 @@
 "use client";
-import { getAllProduct } from "@/api/product_request";
+import { getAllProduct } from "@/api_requests/product_request";
 import ProductsComponent from "@/components/user/products";
 import ProductLayoutComponent from "@/layouts/product_layout";
 import { ProductType } from "@/types";

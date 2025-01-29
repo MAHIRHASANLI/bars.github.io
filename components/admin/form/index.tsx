@@ -8,7 +8,7 @@ import {
   postCloudinaryImg,
   postProduct,
   putProduct,
-} from "@/api/product_request";
+} from "@/api_requests/product_request";
 import SweetAlert from "@/utils/sweet_Alert";
 
 interface FormComponentProps {

@@ -4,8 +4,8 @@ import styles from "./index.module.css";
 import { FormikHelpers, useFormik } from "formik";
 import validationContactForm from "./validation";
 import { MessageTypes } from "@/types";
-import { postMessage } from "@/api/message_request";
 import SweetAlert from "@/utils/sweet_Alert";
+import { postMessage } from "@/api_requests/message_request";
 
 const ContactForm = () => {
   const formik = useFormik<MessageTypes>({

@@ -6,7 +6,7 @@ import styles from "./index.module.css";
 import ProductComponent from "../product";
 import FormComponent from "../form";
 import { ProductType } from "@/types";
-import { getAllProduct } from "@/api/product_request";
+import { getAllProduct } from "@/api_requests/product_request";
 import { FaManatSign } from "react-icons/fa6";
 
 const ProductsListComponent = () => {
