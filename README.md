@@ -8,4 +8,5 @@
 
 Açıqlama: Bars İnşaat – Tikinti Materialları və Qaz Avadanlıqları satishi<br/>
 Link: https://www.bars.com.az
-<div><img src="./images/website-images.png" alt="bars inshaat"/></div>
+<div style="display:flex;gap:20px;"><img src="./images/img-website1.png" alt="bars inshaat"/>
+<img src="./images/img-website2.png" alt="bars inshaat"/></div>
