@@ -8,4 +8,4 @@
 
 Açıqlama: Bars İnşaat – Tikinti Materialları və Qaz Avadanlıqları satishi<br/>
 Link: https://www.bars.com.az
-<div><img src="./images/website-images.png" alt="Mahir Hasani"/></div>
+<div><img src="./images/website-images.png" alt="bars inshaat"/></div>
