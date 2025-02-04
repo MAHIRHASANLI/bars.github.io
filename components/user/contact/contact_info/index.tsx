@@ -3,6 +3,7 @@ import styles from "./index.module.css";
 import { MdLocationOn } from "react-icons/md";
 import { TbClockHour3 } from "react-icons/tb";
 import { FaPhone } from "react-icons/fa";
+import Link from "next/link";
 const ContactInformasia = () => {
   return (
     <div className={styles["info-wrapper"]}>
@@ -27,8 +28,12 @@ const ContactInformasia = () => {
           <FaPhone />
           Əlaqə
         </h4>
-        <p>Mobil: +994 50 746 0000</p>
-        <p>Email: barsinshaatferdi@gmail.com</p>
+        <p>
+          Mobil: <Link href="tel:+994 99 795 10 50">+994 99 795 10 50</Link>
+        </p>
+        <p>
+          Email: <Link href="mailto:info@bars.com.az">info@bars.com.az</Link>
+        </p>
       </div>
     </div>
   );

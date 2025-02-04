@@ -17,8 +17,12 @@ const Footer = () => {
           <div className={styles.footerColumn}>
             <h3>Əlaqə</h3>
             <p>EuroHome Dernegul, 12 Ələsgər Qayıbov</p>
-            {/* <p>barsinshaatferdi@gmail.com</p> */}
-            <p>+994 50 746 0000</p>
+            <p>
+              <Link href="mailto:info@bars.com.az">info@bars.com.az</Link>
+            </p>
+            <p>
+              <Link href="tel:+994 99 795 10 50">+994 99 795 10 50</Link>
+            </p>
           </div>
           <div className={styles.footerColumn}>
             <h3>Səhifələr</h3>
