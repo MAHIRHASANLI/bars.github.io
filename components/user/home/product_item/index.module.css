@@ -22,6 +22,10 @@
   padding: 30px;
 }
 
+.product-img img {
+  object-fit: cover;
+}
+
 .content h3 {
   font-size: 20px;
   font-weight: 600;

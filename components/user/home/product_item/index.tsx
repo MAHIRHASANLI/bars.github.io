@@ -3,9 +3,9 @@ import styles from "./index.module.css";
 import Image from "next/image";
 import Button from "@/components/user/button";
 
-import img1 from "@/images/9.png";
-import img2 from "@/images/8.png";
-import img3 from "@/images/7.png";
+import img1 from "@/images/bars-yapisdirici.jpeg";
+import img2 from "@/images/7.png";
+import img3 from "@/images/bars-yapisdirici2.jpeg";
 
 const ProductItem: React.FC = () => {
   const arrr = [{ image: img1 }, { image: img2 }, { image: img3 }];
