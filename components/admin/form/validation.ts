@@ -9,7 +9,7 @@ const validationSchema = Yup.object().shape({
 
   brand: Yup.string()
     .min(3, "Marka çox qısa!")
-    .max(20, "Marka çox uzun!")
+    .max(100, "Marka çox uzun!")
     .trim("Boşluq buraxmayın")
     .required("Marka tələb olunur"),
 
