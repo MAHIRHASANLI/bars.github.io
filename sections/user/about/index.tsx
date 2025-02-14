@@ -34,7 +34,7 @@ const AboutSection = (props: Props) => {
                 satışını və servisini həyata keçirir.
                 <br />
                 <br />
-                BARS Azərbaycanda NUBER ONE, Elster, Siqnal, FMG, Baypa, Tork,
+                BARS Azərbaycanda NUMBER ONE, Elster, Siqnal, FMG, Baypa, Tork,
                 Madas və Aterma şirkətlərinin rəsmi nümayəndəsidir. Şirkətimiz
                 bu brendlərin məhsullarının idxalını və satışını təşkil edir.
               </p>

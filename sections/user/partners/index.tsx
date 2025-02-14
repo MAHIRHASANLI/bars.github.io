@@ -31,10 +31,11 @@ const Partners = () => {
   return (
     <section className={styles.section}>
       <TitleSection
-        firtTitle="Bizim"
+        firtTitle="Bizim "
         lastTitle="Tərəfdaşlarımız"
-        description="Bizim Tərəfdaşlarımız Birlikdə güvənə əsaslanan əməkdaşlıq qurduğumuz etibarlı tərəfdaşlarımızla xidmət keyfiyyətini daim yüksəldirik."
+        description="Bizim Tərəfdaşlarımızla birlikdə güvənə əsaslanan əməkdaşlıq qurduğumuz etibarlı tərəfdaşlarımızla xidmət keyfiyyətini daim yüksəldirik."
       />
+
       <div className={styles.partners}>
         {partners &&
           partners.map((partner: { image: any; name: string }, i: number) => (

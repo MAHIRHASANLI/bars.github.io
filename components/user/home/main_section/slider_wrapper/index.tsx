@@ -6,22 +6,23 @@ import "swiper/css/navigation";
 import styles from "./index.module.css";
 import Link from "next/link";
 import mainImage1 from "@/images/main1.jpg";
-import mainImage2 from "@/images/main2.webp";
+import mainImage2 from "@/images/main3.jpg";
 import mainImage3 from "@/images/main3.webp";
 import mainImage4 from "@/images/main5.jpg";
 
 const SliderOwlComponent = ({ title = "", description = "", img = "" }) => {
   const mainSlides = [
     {
-      title: "Bars İnşaat – Etibarlı Tikinti Materialları",
-      description:
-        "Keyfiyyətli və dözümlü tikinti materialları ilə layihələrinizi gerçəkləşdirin.",
-      img: mainImage1.src,
-    },
-    {
       title: "Qaz Avadanlıqları – Təhlükəsiz və Sərfəli Həllər",
       description:
         "Bars İnşaat sizə təhlükəsiz və sertifikatlı qaz avadanlıqları təklif edir.",
+
+      img: mainImage1.src,
+    },
+    {
+      title: "Bars İnşaat – Etibarlı Tikinti Materialları",
+      description:
+        "Keyfiyyətli və dözümlü tikinti materialları ilə layihələrinizi gerçəkləşdirin.",
       img: mainImage2.src,
     },
     {
